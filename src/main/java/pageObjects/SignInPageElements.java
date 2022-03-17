@@ -1,21 +1,13 @@
 package pageObjects;
 
-import elementsImplementation.Button;
-import elementsImplementation.EditableTextField;
+import elements.Button;
+import elements.EditableTextField;
 
 import static com.codeborne.selenide.Selenide.$;
 
 public class SignInPageElements {
-    private Button createAccountButton;
-    private EditableTextField createAccountEmailAddressField;
+    public Button createAccountButton = new Button($("#SubmitCreate"));
+    public EditableTextField createAccountEmailAddressField = new EditableTextField($("#email_create"));
 
-    public Button getCreateAccountButton() {
-        createAccountButton = new Button($("#SubmitCreate"));
-        return createAccountButton;
-    }
 
-    public EditableTextField getCreateAccountEmailAddressField() {
-        createAccountEmailAddressField = new EditableTextField($("#email_create"));
-        return createAccountEmailAddressField;
-    }
 }
