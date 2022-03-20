@@ -1,4 +1,4 @@
-package dataModels.user.enums;
+package data.models.user.enums;
 
 public enum Country {
     US("United States");

@@ -4,16 +4,15 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import interfaces.ISelectable;
 
-public class RadioButton extends Element implements ISelectable {
-
-    public RadioButton(SelenideElement element) {
+public class Checkbox extends Element implements ISelectable {
+    public Checkbox(SelenideElement element) {
         super(element);
     }
 
     @Override
     public boolean isSelected() {
         SelenideElement selectAttributeElement = element
-                .ancestor(".radio-inline")
+                .ancestor(".checkbox")
                 .find("span");
         return selectAttributeElement.has(Condition.attribute("class"))
                 && selectAttributeElement.getAttribute("class").equals("checked");
@@ -23,4 +22,5 @@ public class RadioButton extends Element implements ISelectable {
     public void click() {
         element.click();
     }
+
 }

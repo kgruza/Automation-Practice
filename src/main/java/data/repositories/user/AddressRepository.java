@@ -1,6 +1,7 @@
-package dataModels.user.registration;
+package data.repositories.user;
 
-import dataModels.user.enums.Country;
+import data.models.user.enums.Country;
+import data.models.user.Address;
 
 public class AddressRepository {
 
@@ -13,7 +14,7 @@ public class AddressRepository {
         address.setState("Massachusetts");
         address.setAdditionalInfo("23th floor, elevator does not work");
         address.setAlias("My main address");
-        address.setPostalCode("02101");
+        address.setZipPostalCode("02101");
         return address;
     }
 }

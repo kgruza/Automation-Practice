@@ -2,34 +2,35 @@ package elements;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import interfaces.ISelectable;
+import com.google.common.base.Strings;
+import interfaces.IExpandable;
 
-public class Dropdown extends Element implements ISelectable {
-    private final SelenideElement dropdown;
+public class Dropdown extends Element implements IExpandable {
 
-    public Dropdown(SelenideElement dropdown) {
-        super(dropdown);
-        this.dropdown = dropdown;
+    public Dropdown(SelenideElement element) {
+        super(element);
     }
 
     @Override
     public void selectOption(String option) {
-        dropdown.selectOption(option);
+        if (!Strings.isNullOrEmpty(option))
+            element.selectOption(option);
     }
 
     @Override
     public String getSelectedOption() {
-        return dropdown.getSelectedOption().text();
+        return element.getSelectedOption().text();
     }
 
     @Override
     public void selectOptionContainingText(String text) {
-        dropdown.selectOptionContainingText(text);
+        if (!Strings.isNullOrEmpty(text))
+            element.selectOptionContainingText(text);
     }
 
     @Override
     public ElementsCollection getOptions() {
-        return dropdown.getSelectedOptions();
+        return element.getSelectedOptions();
     }
 
 }

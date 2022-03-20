@@ -1,4 +1,4 @@
-package pageObjects;
+package pageobjects;
 
 import elements.Button;
 import elements.EditableTextField;

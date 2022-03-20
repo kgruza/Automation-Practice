@@ -1,15 +1,15 @@
-package pageHelpers;
+package pagehelpers;
 
-import pageObjects.SignInPageElements;
+import pageobjects.SignInPageElements;
 
-public class SignInPageHelper {
+public class SignInPage {
     private final SignInPageElements signInPageElements;
 
-    public SignInPageHelper() {
+    public SignInPage() {
         this.signInPageElements = new SignInPageElements();
     }
 
-    public RegistrationFormHelper proceedToRegistrationFormWithEmail(String email) {
+    public RegistrationForm proceedToRegistrationFormWithEmail(String email) {
         signInPageElements
                 .createAccountEmailAddressField
                 .setText(email);
@@ -17,6 +17,6 @@ public class SignInPageHelper {
                 .createAccountButton
                 .click();
 
-        return new RegistrationFormHelper();
+        return new RegistrationForm();
     }
 }
