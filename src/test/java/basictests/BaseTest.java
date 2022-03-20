@@ -1,4 +1,4 @@
-package basicTests;
+package basictests;
 
 
 import com.codeborne.selenide.Configuration;

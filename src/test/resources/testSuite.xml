@@ -3,7 +3,7 @@
 <suite name="Smoke Tests">
     <test name="Registration">
         <classes>
-            <class name="basicTests.RegistrationTests"/>
+            <class name="basictests.RegistrationTests"/>
         </classes>
     </test>
 </suite>

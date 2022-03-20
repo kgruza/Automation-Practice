@@ -5,36 +5,31 @@ import com.google.common.base.Strings;
 import interfaces.IEditable;
 
 public class EditableTextField extends Element implements IEditable {
-    private final SelenideElement editableTextField;
 
-    public EditableTextField(SelenideElement editableTextField) {
-        super(editableTextField);
-        this.editableTextField = editableTextField;
+    public EditableTextField(SelenideElement element) {
+        super(element);
     }
 
     @Override
     public void clearText() {
-        editableTextField.clear();
+        element.clear();
     }
 
     @Override
     public void setText(String text) {
-        editableTextField.setValue(text);
+        if (!Strings.isNullOrEmpty(text)) {
+            element.clear();
+            element.setValue(text);
+        }
     }
 
     @Override
     public void appendText(String text) {
-        editableTextField.append(text);
-    }
-
-    @Override
-    public void setTextIfNotNullOrEmpty(String text) {
-        if (!Strings.isNullOrEmpty(text))
-            editableTextField.setValue(text);
+        element.append(text);
     }
 
     @Override
     public String getText() {
-        return editableTextField.getText();
+        return element.getValue();
     }
 }

@@ -1,4 +1,6 @@
-package dataModels.user.registration;
+package data.repositories.user;
+
+import data.models.user.RegistrationOptions;
 
 public class RegistrationOptionsRepository {
     public RegistrationOptions getRegistrationOptions() {

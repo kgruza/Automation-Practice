@@ -6,5 +6,4 @@ public interface IEditable extends IReadable {
     void setText(String text);
 
     void appendText(String text);
-    void setTextIfNotNullOrEmpty(String text);
 }
